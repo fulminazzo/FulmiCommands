@@ -4,7 +4,7 @@ name: Automatic Release
 # Event to run on
 on:
   workflow_run:
-    workflows: [ "Execute tests with Gradle" ]
+    workflows: [ "Generate JaCoCo badge" ]
     types:
       - completed
     branches:
