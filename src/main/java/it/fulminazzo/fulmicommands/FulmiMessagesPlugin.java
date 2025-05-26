@@ -43,7 +43,7 @@ public interface FulmiMessagesPlugin extends FulmiPlugin {
                 .name("messages")
                 .onCreated(f -> {
                     for (DefaultFulmiMessages message : messages)
-                        f.set(message.getPath(), message.getMessage());
+                        f.set(message.getPath(), message.getDefaultMessage());
                     f.save();
                 })
                 .build();
