@@ -1,5 +1,7 @@
-package it.fulminazzo.fulmicommands;
+package it.fulminazzo.fulmicommands.messages;
 
+import it.fulminazzo.fulmicommands.FulmiMessagesPlugin;
+import it.fulminazzo.fulmicommands.MockMessagePlugin;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;

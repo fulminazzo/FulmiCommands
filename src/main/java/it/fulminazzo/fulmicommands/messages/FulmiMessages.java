@@ -1,5 +1,6 @@
-package it.fulminazzo.fulmicommands;
+package it.fulminazzo.fulmicommands.messages;
 
+import it.fulminazzo.fulmicommands.FulmiMessagesPlugin;
 import it.fulminazzo.yamlparser.configuration.FileConfiguration;
 import org.jetbrains.annotations.NotNull;
 

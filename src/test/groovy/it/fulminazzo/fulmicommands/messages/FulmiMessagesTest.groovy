@@ -1,5 +1,6 @@
-package it.fulminazzo.fulmicommands
+package it.fulminazzo.fulmicommands.messages
 
+import it.fulminazzo.fulmicommands.MockMessagePlugin
 import spock.lang.Specification
 
 class FulmiMessagesTest extends Specification {
