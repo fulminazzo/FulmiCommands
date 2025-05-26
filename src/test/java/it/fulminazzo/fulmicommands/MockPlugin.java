@@ -10,8 +10,9 @@ import java.io.File;
 
 @Getter
 public class MockPlugin implements FulmiPlugin {
-    private @Nullable FileConfiguration configuration;
     private final @NotNull File pluginDirectory = new File("build/resources/test");
+
+    private @Nullable FileConfiguration configuration;
 
     @Override
     public @NotNull FileConfiguration getConfiguration() {
