@@ -10,7 +10,7 @@ public class MockMessagePlugin extends MockPlugin implements FulmiMessagesPlugin
 
     @Override
     public @NotNull FileConfiguration getMessages() {
-        if (messages == null); //TODO: throw.
+        if (messages == null) throw FulmiException.configurationNotLoaded("messages.yml");
         return messages;
     }
 

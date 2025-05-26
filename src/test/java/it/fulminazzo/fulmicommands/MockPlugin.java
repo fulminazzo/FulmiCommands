@@ -16,7 +16,7 @@ public class MockPlugin implements FulmiPlugin {
 
     @Override
     public @NotNull FileConfiguration getConfiguration() {
-        if (configuration == null); //TODO: throw.
+        if (configuration == null) throw FulmiException.configurationNotLoaded("config.yml");
         return configuration;
     }
 
