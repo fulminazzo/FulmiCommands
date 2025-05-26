@@ -1,5 +1,7 @@
 package it.fulminazzo.fulmicommands
 
+import it.fulminazzo.fulmicommands.messages.DefaultMessages
+import it.fulminazzo.yamlparser.configuration.FileConfiguration
 import spock.lang.Specification
 
 class FulmiPluginTest extends Specification {
@@ -24,6 +26,27 @@ class FulmiPluginTest extends Specification {
 
         then:
         thrown(FulmiException)
+    }
+
+    def 'test that setupMessages stores default messages in the config file'() {
+        given:
+        def plugin = new MockMessagePlugin()
+
+        and:
+        def expected = DefaultMessages.values().collect { it.defaultMessage }
+
+        when:
+        plugin.setupMessages(DefaultMessages.values())
+
+        and:
+        def file = new File(plugin.pluginDirectory, 'messages.yml')
+        def messages = FileConfiguration.newConfiguration(file)
+
+        and:
+        def actual = DefaultMessages.values().collect { messages.getString(it.path) }
+
+        then:
+        actual == expected
     }
 
     def 'test that setupMessages does not throw'() {
