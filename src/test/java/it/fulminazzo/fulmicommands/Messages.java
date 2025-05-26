@@ -7,9 +7,9 @@ import org.jetbrains.annotations.NotNull;
 @Getter
 @RequiredArgsConstructor
 public enum Messages implements FulmiMessages {
-    PREFIX("prefix"),
-
-    GREETING("greeting"),
+    NO_PREFIX("no-prefix"),
+    PREFIXED("prefixed"),
+    NOT_EXISTS("not-exists"),
     ;
 
     private final String path;
@@ -21,7 +21,7 @@ public enum Messages implements FulmiMessages {
 
     @Override
     public @NotNull String getFallbackMessage() {
-        return "Invalid configuration file detected, could not find path: %path%";
+        return "Invalid configuration file detected, could not find path: <path>";
     }
 
     @Override
