@@ -143,4 +143,13 @@ public final class Configurator {
         return this;
     }
 
+    /**
+     * Instantiates a new configurator.
+     *
+     * @return the configurator
+     */
+    public static @NotNull Configurator newBuilder() {
+        return new Configurator();
+    }
+
 }
