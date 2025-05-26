@@ -1,6 +1,7 @@
 package it.fulminazzo.fulmicommands;
 
 import it.fulminazzo.fulmicommands.configuration.ConfigurationException;
+import it.fulminazzo.fulmicommands.configuration.ConfigurationType;
 import it.fulminazzo.fulmicommands.configuration.Configurator;
 import it.fulminazzo.fulmicommands.messages.DefaultFulmiMessages;
 import it.fulminazzo.yamlparser.configuration.FileConfiguration;
@@ -41,12 +42,23 @@ public interface FulmiMessagesPlugin extends FulmiPlugin {
         return Configurator.newBuilder()
                 .pluginDirectory(getPluginDirectory())
                 .name("messages")
+                .type(getMessagesType())
                 .onCreated(f -> {
                     for (DefaultFulmiMessages message : messages)
                         f.set(message.getPath(), message.getDefaultMessage());
                     f.save();
                 })
                 .build();
+    }
+
+    /**
+     * The type of the {@link #getMessages()} configuration.
+     * By default, it is {@link ConfigurationType#YAML}.
+     *
+     * @return configuration type
+     */
+    default @NotNull ConfigurationType getMessagesType() {
+        return ConfigurationType.YAML;
     }
 
 }
