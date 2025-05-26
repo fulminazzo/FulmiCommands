@@ -21,7 +21,7 @@ class FulmiMessagesTest extends Specification {
 
         where:
         message             || expected
-        Messages.PREFIXED   || Messages.PREFIXED.prefix + ' Hello, world!'
+        Messages.PREFIXED   || Messages.PREFIXED.prefix() + ' Hello, world!'
         Messages.NO_PREFIX  || 'Hello, friend!'
         Messages.NOT_EXISTS || "Invalid configuration file detected, could not find path: $Messages.NOT_EXISTS.path"
     }
