@@ -1,6 +1,7 @@
 package it.fulminazzo.fulmicommands;
 
 import it.fulminazzo.fulmicommands.configuration.ConfigurationException;
+import it.fulminazzo.fulmicommands.configuration.ConfigurationType;
 import it.fulminazzo.fulmicommands.configuration.Configurator;
 import it.fulminazzo.yamlparser.configuration.FileConfiguration;
 import org.jetbrains.annotations.NotNull;
@@ -29,7 +30,18 @@ public interface FulmiPlugin {
         return Configurator.newBuilder()
                 .pluginDirectory(getPluginDirectory())
                 .name("config")
+                .type(getConfigurationType())
                 .build();
+    }
+
+    /**
+     * The type of the {@link #getConfiguration()} configuration.
+     * By default, it is {@link ConfigurationType#YAML}.
+     *
+     * @return configuration type
+     */
+    default @NotNull ConfigurationType getConfigurationType() {
+        return ConfigurationType.YAML;
     }
 
     /**
