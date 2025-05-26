@@ -15,13 +15,23 @@ public interface FulmiMessages {
      * @return the message
      */
     default @NotNull String getMessage() {
+        return getUnparsedMessage()
+                .replace("<prefix>", prefix())
+                .replace("<path>", getPath());
+    }
+
+    /**
+     * Gets the message from the <i>messages.yml</i> configuration file
+     * without parsing in variables.
+     *
+     * @return the unparsed message
+     */
+    default @NotNull String getUnparsedMessage() {
         FileConfiguration messages = getPlugin().getMessages();
         String path = getPath();
         String message = messages.getString(path);
         if (message == null) message = fallbackMessage();
-        return message
-                .replace("<prefix>", prefix())
-                .replace("<path>", path);
+        return message;
     }
 
     /**
