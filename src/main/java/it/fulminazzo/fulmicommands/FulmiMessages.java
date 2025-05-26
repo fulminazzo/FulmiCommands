@@ -11,15 +11,16 @@ public interface FulmiMessages {
     /**
      * Gets the message from the <i>messages.yml</i> configuration file.
      *
-     * @param prefix true if {@link #getPrefix()} should be prepended
      * @return the message
      */
-    default @NotNull String getMessage(boolean prefix) {
+    default @NotNull String getMessage() {
         FileConfiguration messages = getPlugin().getMessages();
-        String message = messages.getString(getPath());
-        if (message == null) return getFallbackMessage();
-        else if (!prefix) return message;
-        else return getPrefix() + message;
+        String path = getPath();
+        String message = messages.getString(path);
+        if (message == null) message = getFallbackMessage();
+        return message
+                .replace("<prefix>", getPrefix())
+                .replace("<path>", path);
     }
 
     /**
@@ -37,7 +38,7 @@ public interface FulmiMessages {
     @NotNull String getPath();
 
     /**
-     * Gets the message in case {@link #getMessage(boolean)} is not able to find it from the configuration.
+     * Gets the message in case {@link #getMessage()} is not able to find it from the configuration.
      *
      * @return the fallback message
      */
