@@ -17,12 +17,12 @@ public enum Messages implements FulmiMessages {
     private final String path;
 
     @Override
-    public @NotNull String getPrefix() {
+    public @NotNull String prefix() {
         return "FulmiCommands >> ";
     }
 
     @Override
-    public @NotNull String getFallbackMessage() {
+    public @NotNull String fallbackMessage() {
         return "Invalid configuration file detected, could not find path: <path>";
     }
 

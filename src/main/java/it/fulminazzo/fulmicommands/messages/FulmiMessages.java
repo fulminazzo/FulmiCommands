@@ -18,9 +18,9 @@ public interface FulmiMessages {
         FileConfiguration messages = getPlugin().getMessages();
         String path = getPath();
         String message = messages.getString(path);
-        if (message == null) message = getFallbackMessage();
+        if (message == null) message = fallbackMessage();
         return message
-                .replace("<prefix>", getPrefix())
+                .replace("<prefix>", prefix())
                 .replace("<path>", path);
     }
 
@@ -29,7 +29,7 @@ public interface FulmiMessages {
      *
      * @return the prefix
      */
-    @NotNull String getPrefix();
+    @NotNull String prefix();
 
     /**
      * Gets the path in the configuration.
@@ -43,7 +43,7 @@ public interface FulmiMessages {
      *
      * @return the fallback message
      */
-    @NotNull String getFallbackMessage();
+    @NotNull String fallbackMessage();
 
     /**
      * Gets a plugin that supports {@link FileConfiguration} for messages.
