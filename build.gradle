@@ -22,8 +22,8 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.36'
     compileOnly 'org.jetbrains:annotations:26.0.2'
 
-    api 'it.fulminazzo:FulmiCollection:1.8'
-    api 'it.fulminazzo:Configurations:1.6.3'
+    api 'it.fulminazzo:FulmiCollection:1.8.1'
+    api 'it.fulminazzo:Configurations:1.6.4'
 
     testCompileOnly 'org.projectlombok:lombok:1.18.36'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.36'
