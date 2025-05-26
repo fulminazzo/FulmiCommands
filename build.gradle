@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'jacoco-report-aggregation'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 group = 'it.fulminazzo'
@@ -7,11 +9,19 @@ version = '1.0.0'
 
 repositories {
     mavenCentral()
+    maven {
+        name = 'fulminazzo'
+        url = 'https://repo.fulminazzo.it/releases'
+    }
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    compileOnly 'org.projectlombok:lombok:1.18.36'
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+    compileOnly 'org.jetbrains:annotations:26.0.2'
+
+    implementation 'it.fulminazzo:FulmiCollection:1.8'
+    implementation 'it.fulminazzo:Configurations:1.6.3'
 }
 
 test {
