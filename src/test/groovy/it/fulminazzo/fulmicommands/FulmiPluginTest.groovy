@@ -15,4 +15,15 @@ class FulmiPluginTest extends Specification {
         plugin.getConfiguration() != null
     }
 
+    def 'test that setupMessages does not throw'() {
+        given:
+        def plugin = new MockMessagePlugin()
+
+        when:
+        plugin.setupMessages()
+
+        then:
+        plugin.getMessages() != null
+    }
+
 }
