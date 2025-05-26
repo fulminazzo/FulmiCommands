@@ -35,3 +35,11 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+testCodeCoverageReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        csv.required = true
+    }
+}
