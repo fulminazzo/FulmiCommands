@@ -1,5 +1,6 @@
 package it.fulminazzo.fulmicommands.messages;
 
+import it.fulminazzo.amplitude.component.Component;
 import it.fulminazzo.fulmicommands.FulmiMessagesPlugin;
 import it.fulminazzo.yamlparser.configuration.FileConfiguration;
 import org.jetbrains.annotations.NotNull;
@@ -14,10 +15,10 @@ public interface FulmiMessages {
      *
      * @return the message
      */
-    default @NotNull String getMessage() {
-        return getUnparsedMessage()
+    default @NotNull Component getMessage() {
+        return Component.fromRaw(getUnparsedMessage()
                 .replace("<prefix>", prefix())
-                .replace("<path>", getPath());
+                .replace("<path>", getPath()));
     }
 
     /**
