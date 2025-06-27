@@ -14,7 +14,7 @@ class FulmiMessagesTest extends Specification {
 
     def 'test that #message returns #expected'() {
         when:
-        def actual = message.getMessage()
+        def actual = message.getMessage().serialize()
 
         then:
         actual == expected

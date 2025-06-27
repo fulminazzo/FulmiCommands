@@ -20,7 +20,7 @@ public enum DefaultMessages implements DefaultFulmiMessages {
 
     @Override
     public @NotNull String prefix() {
-        return PREFIX.getMessage();
+        return PREFIX.getUnparsedMessage();
     }
 
     @Override

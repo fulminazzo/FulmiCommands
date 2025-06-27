@@ -16,6 +16,7 @@ class ConfiguratorTest extends Specification {
 
         and:
         def file = new File(PLUGIN_DIRECTORY, 'existing.toml')
+        if (file.exists()) file.delete()
         FileUtils.createNewFile(file)
         file.write('hello = "world"')
 
