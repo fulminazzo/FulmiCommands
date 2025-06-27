@@ -24,6 +24,7 @@ dependencies {
 
     api 'it.fulminazzo:FulmiCollection:1.8.1'
     api 'it.fulminazzo:Configurations:1.6.4'
+    api 'it.fulminazzo:amplitude:2.0'
 
     testCompileOnly 'org.projectlombok:lombok:1.18.36'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.36'
