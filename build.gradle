@@ -7,7 +7,7 @@ plugins {
 }
 
 group = 'it.fulminazzo'
-version = '1.1.0'
+version = '1.1.1'
 
 repositories {
     mavenCentral()
@@ -24,7 +24,7 @@ dependencies {
 
     api 'it.fulminazzo:FulmiCollection:1.8.1'
     api 'it.fulminazzo:Configurations:1.6.4'
-    api 'it.fulminazzo:amplitude:2.1'
+    api 'it.fulminazzo:amplitude:2.2'
 
     testCompileOnly 'org.projectlombok:lombok:1.18.36'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.36'
